@@ -19,11 +19,15 @@ const showProducts = (products) => {
             <img class="product-image" src=${image}></img>
           </div>
           <div class="card-body">
-            <h4>${product.title}</h4>
-            <p>Category: ${product.category}</p>
-            <h3>Price: $ ${product.price}</h3>
-            <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-secondary">add to cart</button>
-            <button id="details-btn" class="btn btn-danger">Details</button>
+            <h4>${product.title.slice(0, 30)}</h4>
+            <p class="mb-2">Category: ${product.category}</p>
+            <div class="fw-bold d-flex justify-content-between">
+              <p class="mb-1"><i class="fas fa-star text-warning"></i> ${product.rating.rate}</p>
+              <p class="mb-1">Total: (${product.rating.count})</p>
+            </div>
+            <h5 class="fw-bold my-2">Price: $ ${product.price}</h5>
+            <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-danger">add to cart</button>
+            <button id="details-btn" class="btn btn-dark">Details</button>
           </div>
         </div>
       </div>
